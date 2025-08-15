@@ -1,10 +1,10 @@
 services:
   - type: web
-    name: water-dashboard
-    env: static
-    branch: main   # badilisha kwa branch yako ya GitHub ikiwa ni tofauti
+    name: water-meter-pwa
+    env: node
     plan: free
-    buildCommand: ""   # kwa static site hatuhitaji build command
-    startCommand: ""   # kwa static site hatuhitaji start command
-    autoDeploy: true   # inafanya deploy kila push kwenye branch hii
-    envVars: []        # unaweza kuongeza environment variables kama utahitaji
+    buildCommand: ""
+    startCommand: "node server.js"
+    envVars:
+      - key: NODE_ENV
+        value: production
